@@ -75,6 +75,7 @@ const Login = () => {
                     </button>
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
                         Don't Have an Account? <Link to='/signup' className="text-blue-700 hover:underline dark:text-blue-500">Sign Up Now</Link>
+                        <p className="text-red-600">{error}</p>
                     </div>
 
                 </form>

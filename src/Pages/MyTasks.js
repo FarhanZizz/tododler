@@ -14,8 +14,7 @@ const MyTasks = () => {
             return data
         }
     });
-    // const task = useSelector((state) => state.tasks);
-    // console.log(task);
+    const task = useSelector((state) => state.tasks);
     return (
         <div className='mb-20'>
             <h1 className='text-center font-bold text-3xl mb-10'>My Tasks</h1>

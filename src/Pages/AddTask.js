@@ -1,23 +1,41 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addTask } from '../features/taskSlice';
+import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
-
-
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const AddTask = () => {
-    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
     const HandleAddTask = (event) => {
         event.preventDefault()
         const form = event.target
         const title = form.title.value
         const image = form.image.value
         const description = form.description.value
+        const email = user.email
+        const completed = false
+        const task = { title, image, description, email, completed }
 
-        console.log(title, image, description);
-        dispatch(addTask({
-            title, image, description
-        }))
+        fetch('http://localhost:5000/addtask', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(task)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    form.reset()
+                    toast.success('Task Successfully added')
+                    navigate('/mytask');
+                }
+                else {
+                    toast.error(data.message);
+                }
+            })
     }
     return (
 

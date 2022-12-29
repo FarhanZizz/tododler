@@ -7,6 +7,7 @@ import Signup from './Pages/Signup';
 import AddTask from './Pages/AddTask';
 import MyTasks from './Pages/MyTasks';
 import CompletedTasks from './Pages/CompletedTasks';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,7 @@ function App() {
   return (
     <div className='px-4'>
       <RouterProvider router={router}></RouterProvider>
+      <Toaster></Toaster>
     </div>
   );
 }

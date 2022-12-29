@@ -7,6 +7,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 const AddTask = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+
     const HandleAddTask = (event) => {
         event.preventDefault()
         const form = event.target

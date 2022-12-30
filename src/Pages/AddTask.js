@@ -18,7 +18,7 @@ const AddTask = () => {
         const completed = false
         const task = { title, image, description, email, completed }
 
-        fetch('http://localhost:5000/addtask', {
+        fetch('https://tododler-server.vercel.app/addtask', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

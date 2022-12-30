@@ -14,7 +14,7 @@ const TaskCard = ({ t, refetch }) => {
 
         const updatedTask = { title, image, description }
 
-        fetch(`http://localhost:5000/task/edit/${id}`, {
+        fetch(`https://tododler-server.vercel.app/task/edit/${id}`, {
 
             method: 'PATCH',
             body: JSON.stringify(updatedTask),
@@ -38,7 +38,7 @@ const TaskCard = ({ t, refetch }) => {
 
     const handleComplete = (id) => {
 
-        fetch(`http://localhost:5000/task/complete/${id}`, { method: 'PATCH' })
+        fetch(`https://tododler-server.vercel.app/task/complete/${id}`, { method: 'PATCH' })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
@@ -52,7 +52,7 @@ const TaskCard = ({ t, refetch }) => {
 
     }
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/task/delete/${id}`, { method: 'DELETE' })
+        fetch(`https://tododler-server.vercel.app/task/delete/${id}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount === 1) {

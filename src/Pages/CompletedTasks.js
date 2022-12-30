@@ -10,7 +10,7 @@ const CompletedTasks = () => {
     const { data: tasks = [], refetch, isLoading } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/tasks?email=${user?.email}`);
+            const res = await fetch(`https://tododler-server.vercel.app/tasks?email=${user?.email}`);
             const data = await res.json();
             return data
         }

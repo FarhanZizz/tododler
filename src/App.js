@@ -8,6 +8,7 @@ import AddTask from './Pages/AddTask';
 import MyTasks from './Pages/MyTasks';
 import CompletedTasks from './Pages/CompletedTasks';
 import { Toaster } from 'react-hot-toast';
+import PrivateRoute from './Components/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -28,15 +29,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/addtask',
-        element: <AddTask></AddTask>
+        element: <PrivateRoute><AddTask></AddTask></PrivateRoute>
       },
       {
         path: '/mytask',
-        element: <MyTasks></MyTasks>
+        element: <PrivateRoute><MyTasks></MyTasks></PrivateRoute>
       },
       {
         path: '/completedtask',
-        element: <CompletedTasks></CompletedTasks>
+        element: <PrivateRoute><CompletedTasks></CompletedTasks></PrivateRoute>
       }
     ]
   }

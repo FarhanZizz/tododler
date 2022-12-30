@@ -1,4 +1,3 @@
-import { Button, Modal } from 'flowbite-react';
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 

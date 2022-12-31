@@ -10,7 +10,8 @@ This is task management demo webiite built using the following technologies:
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs
 - **Flowbite**: An open-source library of UI components based on the utility-first Tailwind CSS framework
 
-### Server - https://tododler-server.vercel.app & https://github.com/FarhanZizz/tododler-server
+### Server - https://tododler-server.vercel.app
+### Server Code - https://github.com/FarhanZizz/tododler-server
 
 I hope you enjoy using this website and find it easy to navigate. If you have any questions or feedback, please don't hesitate to contact.
 
